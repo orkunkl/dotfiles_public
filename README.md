@@ -1,5 +1,9 @@
 # Dotfiles
 
+## Preparation
+
+Find all and replace `{USERNAME}`, `{USERMAIL}` to your preferation.
+
 ## Installation
 
 - `cd ~`
