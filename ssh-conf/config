@@ -1,0 +1,11 @@
+Host orkunkl.github.com
+    HostName github.com
+    User git
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa
+
+Host etaeh.github.com
+    HostName github.com
+    User git
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/etaeh_rsa

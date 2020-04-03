@@ -1,0 +1,13 @@
+*~
+.DS_Store
+target/
+.vscode/
+.env
+.envrc
+*/.envrc
+.java-version
+.vscode
+.idea
+cmd/test
+tmp
+

@@ -1,0 +1,74 @@
+[user]
+	name = {USERNAME}
+	email = {USERMAIL}
+
+[github]
+    user = {USERNAME}
+
+[alias]
+    br  = branch
+    lg  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    cma = commit -am
+    st  = status -s
+    co  = checkout
+    mg  = merge --no-ff --edit
+    sd  = diff --stat
+    dc  = diff --cached
+    last = log -u -1 --stat
+    unstage = reset HEAD --
+    uncommit = reset --soft HEAD~1
+    pr = !git diff $(git merge-base develop HEAD) HEAD
+    conflicts = diff --name-only --diff-filter=U
+	git = !exec git
+	gut = !exec git
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+    rl = git reset HEAD~
+    pushtag = push origin --tags
+
+[core]
+    pager = diff-so-fancy | less --tabs=4 -RFX    
+    editor = nvim
+    whitespace = cr-at-eol
+	excludesfile = /Users/{USERNAME}/dotfiles/git/.gitignore
+
+[color]
+    ui = true
+
+[color "diff"]
+    meta       = "yellow"
+    frag       = "magenta bold"
+    commit     = "yellow bold"
+    old        = "red bold"
+    new        = "green bold"
+    whitespace = "red reverse"
+
+[color "diff"]
+    oldNormal    = "red bold"
+    oldHighlight = "red bold 52"
+    newNormal    = "green bold"
+    newHighlight = "green bold 22"
+
+[push]
+	default = current
+
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+  insteadOf = https://gitlab.com/
+[url "ssh://git@bitbucket.org/"]
+  insteadOf = https://bitbucket.org/
+        
+[includeIf "gitdir:~/Developer/logsign/**"]
+    path = .gitconfig.logsign
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[commit]
+	gpgsign = false
+[gpg]
+	program = gpg
+[tag]
+	forceSignAnnotated = true
+[credential]
+	helper = osxkeychain
+[init]
+	templatedir = ~/dotfiles/git/.git-templates
